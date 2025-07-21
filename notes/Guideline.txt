@@ -1,0 +1,77 @@
+-----------------------------------------------------------------------------------
+Installation:
+-----------------------------------------------------------------------------------
+    composer require jazer/pasakay:dev-main
+    composer update jazer/pasakay
+    php artisan vendor:publish --tag=jtpasakayconfig-config
+    connection: conn_pasakay
+
+
+
+-----------------------------------------------------------------------------------
+Routes:
+----------------------------------------------------------------------------------- 
+rentalsposting/createrentalpost? {
+    "branch_refid": "BRN-3333",
+    "business_refid": "BSN-3333",
+    "market_place_list": "TEST List3",
+    "category": "EQP",
+    "name": "Vape",
+    "description": "Cloud build",
+    "currency": "PHP",
+    "price_curr": 250,
+    "price_prev": 299,
+    "duration": "8HR",
+    "created_by": "Damian",
+    "status": "PUB"
+}
+
+rentalsposting/updaterentalpost? {
+    "reference_id": "RLP-07142025070240-HUW",
+    "branch_refid": "BRN-22222",
+    "business_refid": "BSN-22222",
+    "market_place_list": "TEST List2",
+    "category": "EQP",
+    "name": "Bike Road",
+    "description": "Automatic Bike",
+    "currency": "PHP",
+    "price_curr": 3000,
+    "price_prev": 5000,
+    "duration": "8HR",
+    "created_by": "Damian"
+}
+
+rentalsposting/updaterentalpoststatus? {
+    "reference_id": "RLP-07142025070240-HUW",
+    "status": "DRF"
+}
+
+rentalsposting/deleterentalpost? {
+    "reference_id": "RLP-07142025070240-HUW"
+   
+}
+fetchpaginaterentalpost?page=1&search=STR
+rentalsposting/singlerentalpost?reference_id=STR
+
+rentalsbooking/createrentalbooking? {
+    "branch_refid": "BRN-11111",
+    "convo_refid": "CVR-1111",
+    "item_refid": "RLP-07142025073809-3VX",
+    "user_refid": "Damian",
+    "duration": 3,
+    "total": 7,
+    "created_by": "Damian",
+    "status": "PDG"
+    
+}
+
+rentalsbooking/updaterentalbookingstatus?{
+    "reference_id": "RLB-07142025083319-0ZQ",
+    "status": "ONG"
+}
+rentalsbooking/deleterentalbooking?{
+    "reference_id": "RLB-07142025083319-0ZQ"
+   
+}
+rentalsbooking/fetchpaginaterentalbooking?page=1&search=STR
+rentalsbooking/singlerentalbooking?reference_id=STR
