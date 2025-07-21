@@ -1,6 +1,6 @@
 {
     "name": "jazer/pasakay",
-    "description": "Jazer package to handle rental API request",
+    "description": "Jazer package to handle pasakay API request",
     "type": "package",
     "license": "MIT",
     "autoload": {

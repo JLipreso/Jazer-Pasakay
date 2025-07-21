@@ -24,13 +24,12 @@ class RiderHailingBooking extends Controller
      //   $getDistanceKM = \Jazer\Pasakay\Http\Controllers\Utility\GoogleMapMatrix::getDistance(
      //       $request['pickup_location'],$request['dropoff_location']);
     
-
         $source = DB::connection("conn_pasakay")
         ->table("rider_hailing_config")
         ->select("fare_base", "fare_succeeding")
         ->where([
-           "project_refid"     => config('jtpasakayconfig.project_refid'),
-            "branch_refid"      => $request['branch_refid']
+            ["project_refid", "=", config("jtpasakayconfig.project_refid")],
+            ["branch_refid", "=",  $request['branch_refid']]
         ])
         ->get();
 
