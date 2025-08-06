@@ -11,67 +11,65 @@ Installation:
 -----------------------------------------------------------------------------------
 Routes:
 ----------------------------------------------------------------------------------- 
-rentalsposting/createrentalpost? {
-    "branch_refid": "BRN-3333",
-    "business_refid": "BSN-3333",
-    "market_place_list": "TEST List3",
-    "category": "EQP",
-    "name": "Vape",
-    "description": "Cloud build",
-    "currency": "PHP",
-    "price_curr": 250,
-    "price_prev": 299,
-    "duration": "8HR",
-    "created_by": "Damian",
-    "status": "PUB"
-}
-
-rentalsposting/updaterentalpost? {
-    "reference_id": "RLP-07142025070240-HUW",
-    "branch_refid": "BRN-22222",
-    "business_refid": "BSN-22222",
-    "market_place_list": "TEST List2",
-    "category": "EQP",
-    "name": "Bike Road",
-    "description": "Automatic Bike",
-    "currency": "PHP",
-    "price_curr": 3000,
-    "price_prev": 5000,
-    "duration": "8HR",
-    "created_by": "Damian"
-}
-
-rentalsposting/updaterentalpoststatus? {
-    "reference_id": "RLP-07142025070240-HUW",
-    "status": "DRF"
-}
-
-rentalsposting/deleterentalpost? {
-    "reference_id": "RLP-07142025070240-HUW"
-   
-}
-fetchpaginaterentalpost?page=1&search=STR
-rentalsposting/singlerentalpost?reference_id=STR
-
-rentalsbooking/createrentalbooking? {
-    "branch_refid": "BRN-11111",
-    "convo_refid": "CVR-1111",
-    "item_refid": "RLP-07142025073809-3VX",
-    "user_refid": "Damian",
-    "duration": 3,
-    "total": 7,
-    "created_by": "Damian",
-    "status": "PDG"
+ride-hailing-booking/create? {
+    "branch_refid": "BNH-07032025111944-WEE",
+    "customer_refid": "USR-07032025113415-2TR",
+    "pickup_location": {"geolocation":[10.20249404282869, 123.75309910056328],"address": "Purok 7, Sitio Lawis, Ormoc City, 6541 Leyte"},
+    "dropoff_location": {"geolocation":[10.204352454916501,123.75464405291767],"address": "Purok 7, Sitio Lawis, Ormoc City, 6541 Leyte"},
+    "cash_tips": 10,
+    "booking_remarks": "Good Day"
     
 }
 
-rentalsbooking/updaterentalbookingstatus?{
-    "reference_id": "RLB-07142025083319-0ZQ",
-    "status": "ONG"
+ride-hailing-booking/assign-rider? {
+    "reference_id": "RHB-07212025040845-9S4",
+    "rider_refid": "RDR-07032025113415-26X"
 }
-rentalsbooking/deleterentalbooking?{
-    "reference_id": "RLB-07142025083319-0ZQ"
-   
+
+ride-hailing-booking/cancel? {
+    "reference_id": "RHB-07212025040845-9S4"
 }
-rentalsbooking/fetchpaginaterentalbooking?page=1&search=STR
-rentalsbooking/singlerentalbooking?reference_id=STR
+
+ride-hailing-booking/complete? {
+    "reference_id": "RHB-07212025040845-9S4"
+}
+
+ride-hailing-booking/fail? {
+    "reference_id": "RHB-07212025040845-9S4",
+    "rider_remarks": "Heavy Rain"
+}
+
+ride-hailing-booking/delete?{
+     "reference_id": "RHB-07212025033402-SNT"
+}
+
+
+ride-hailing-booking/paginate?page=1&search=STR
+ride-hailing-booking/singlefetch?reference_id=STR
+ride-hailing-booking/statistics
+
+
+ride-hailing-config/create{
+    "branch_refid": "BNH-07032025111944-X8U",
+    "fare_base": "35",
+    "fare_succeeding": "25"
+}
+
+ride-hailing-config/update{
+    "reference_id": "RHC-08042025021335-KPJ",
+    "branch_refid": "BNH-07032025111944-X8U",
+    "fare_base": "35",
+    "fare_succeeding": "168"
+}
+
+ride-hailing-config/close{
+    "reference_id": "RHC-08042025115050-UT8"
+}
+ride-hailing-config/open{
+    "reference_id": "RHC-08042025021335-KPJ"
+}
+ride-hailing-config/delete{
+    "reference_id": "RHC-08042025115208-DSO"
+}
+ride-hailing-config/paginate?page=1&search=STR
+ride-hailing-config/singlefetch?reference_id=STR
