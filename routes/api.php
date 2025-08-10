@@ -21,11 +21,11 @@ use Jazer\Pasakay\Http\Controllers\Fetch\SingleRideHailingConfig;
 Route::group(['prefix' => 'api'], function () {
     Route::group(['prefix' => 'ride-hailing-booking'], function () {          
         Route::post('create', [RiderHailingBooking::class, 'create']);
-        Route::post('assign-rider', [AssignRiderRideHailingBooking::class, 'assignrider']);
-        Route::post('cancel', [CancelRideHailingBooking::class, 'cancel']);
-        Route::post('complete', [CompleteRideHailingBooking::class, 'complete']);
-        Route::post('fail', [FailRideHailingBooking::class, 'fail']);
-        Route::post('delete', [DeleteRideHailingBooking::class, 'delete']);
+        Route::put('assign-rider', [AssignRiderRideHailingBooking::class, 'assignrider']);
+        Route::put('cancel', [CancelRideHailingBooking::class, 'cancel']);
+        Route::put('complete', [CompleteRideHailingBooking::class, 'complete']);
+        Route::put('fail', [FailRideHailingBooking::class, 'fail']);
+        Route::delete('delete', [DeleteRideHailingBooking::class, 'delete']);
         Route::get('paginate', [PaginateRideHailingBooking::class, 'paginate']);
         Route::get('singlefetch', [SingleRideHailingBooking::class, 'single']);
         Route::get('statistics', [StatisticsRideHailingBooking::class, 'statistics']);
