@@ -32,10 +32,10 @@ Route::group(['prefix' => 'api'], function () {
     });
     Route::group(['prefix' => 'ride-hailing-config'], function () {          
         Route::post('create', [RiderHailingConfig::class, 'create']);
-        Route::post('update', [UpdateRiderHailingConfig::class, 'update']);
-        Route::post('close',  [CloseRiderHailingConfig::class, 'close']);
-        Route::post('open',   [OpenRiderHailingConfig::class, 'open']);
-        Route::post('delete', [DeleteRideHailingConfig::class, 'delete']);
+        Route::put('update', [UpdateRiderHailingConfig::class, 'update']);
+        Route::put('close',  [CloseRiderHailingConfig::class, 'close']);
+        Route::put('open',   [OpenRiderHailingConfig::class, 'open']);
+        Route::delete('delete', [DeleteRideHailingConfig::class, 'delete']);
         Route::get('paginate', [PaginateRideHailingConfig::class, 'paginate']);
         Route::get('singlefetch', [SingleRideHailingConfig::class, 'single']);
     });
